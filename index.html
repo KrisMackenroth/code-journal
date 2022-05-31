@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Journal</title>
   <link rel="icon" href="images/favicon.ico">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  <header>
-  </header>
   <main>
+    <div class="container">
+      <div data-view="entry-form">
+        <div class="row">
+          <div class="col title">
+            <h2>Code Journal</h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="row">
+            <h1>New Entry</h1>
+          </div>
+          <form class="journal-entry-form">
+            <div class="row">
+              <div class="col col-sm-half">
+                <img class="new-image" src="images/placeholder-image-square.jpg" alt="placeholder">
+              </div>
+              <div class="col col-sm-half text-input">
+                <label for="user-title">Title<br></label>
+                <input required name="title" type="text" id="user-title">
+                <label for="user-url">Photo URL<br></label>
+                <input required name="url" type="url" class="user-url">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="user-notes">Notes<br></label>
+                <textarea name="notes" id="user-notes" rows="4" cols="50" required></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col submit">
+                <button type="submit" class="save">SAVE</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
