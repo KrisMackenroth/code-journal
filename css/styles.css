@@ -1,0 +1,111 @@
+* {
+  font-family: sans-serif;
+}
+
+main {
+  background-color: #ececec;
+}
+
+.title {
+  background-color: #4a2373;
+  color: white;
+}
+
+.column-half > img {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin-left: 10px;
+}
+
+h2 {
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+label,
+input,
+textarea {
+  display: block;
+}
+
+label {
+  margin: 20px 0 10px;
+  font-weight: 500;
+}
+
+#user-notes {
+  height: 100px;
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c8c8;
+}
+
+.submit {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  border: none;
+  background-color: #4a2373;
+  color: white;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 8px;
+  width: 60px;
+}
+
+.box {
+  width: 96%;
+  margin: auto;
+}
+
+#user-title {
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c8c8;
+  padding: 6px;
+}
+
+.user-url {
+  width: 100%;
+  border-radius: 3px;
+  border: 2px solid #c9c8c8;
+  padding: 6px;
+}
+
+.user-url:focus {
+  outline: none;
+  border: 2px solid #4b2373;
+}
+
+#user-title:focus {
+  outline: none;
+  border: 2px solid #4b2373;
+}
+
+#user-notes:focus {
+  outline: none;
+  border: 2px solid #4b2373;
+}
+
+.new-image {
+  margin-top: 20px;
+}
+
+.background-purple {
+  background-color: #4b2373;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+}
+
+.position-absolute {
+  position: relative;
+}
