@@ -11,34 +11,20 @@ main {
   color: white;
 }
 
-.col {
-  width: 100%;
-}
-
-.col-sm-half > img {
+.column-half > img {
   width: 100%;
   text-align: center;
 }
 
-h2 {
-  padding-left: 5%;
-  font-weight: lighter;
-  font-size: 18px;
+h1 {
+  margin-left: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  .col-sm-half {
-    width: 50%;
-  }
-
-  .text-input {
-    padding-left: 20px;
-    padding-bottom: 20px;
-  }
-
-  label {
-    font-weight: 500;
-  }
+h2 {
+  padding-left: 10px;
+  margin-left: 10px;
+  font-weight: lighter;
+  font-size: 18px;
 }
 
 label,
@@ -76,7 +62,7 @@ button {
 }
 
 .box {
-  width: 90%;
+  width: 96%;
   margin: auto;
 }
 
@@ -111,4 +97,15 @@ button {
 
 .new-image {
   margin-top: 20px;
+}
+
+.background-purple {
+  background-color: #4b2373;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+}
+
+.position-absolute {
+  position: relative;
 }

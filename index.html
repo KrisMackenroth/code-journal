@@ -16,11 +16,14 @@
 
 <body>
   <main>
+    <div class=" background-purple"></div>
     <div class="container">
-      <div data-view="entry-form">
-        <div class="row">
-          <div class="col title">
-            <h2>Code Journal</h2>
+      <div class="box">
+        <div data-view="entry-form">
+          <div class="row position-absolute">
+            <div class="column-full title">
+              <h2>Code Journal</h2>
+            </div>
           </div>
         </div>
         <div class="box">
@@ -29,10 +32,10 @@
           </div>
           <form class="journal-entry-form">
             <div class="row">
-              <div class="col col-sm-half">
+              <div class="column-full column-half">
                 <img class="new-image" src="images/placeholder-image-square.jpg" alt="placeholder">
               </div>
-              <div class="col col-sm-half text-input">
+              <div class="column-full column-half text-input">
                 <label for="user-title">Title<br></label>
                 <input required name="title" type="text" id="user-title">
                 <label for="user-url">Photo URL<br></label>
@@ -40,13 +43,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col">
+              <div class="column-full">
                 <label for="user-notes">Notes<br></label>
                 <textarea name="notes" id="user-notes" rows="4" cols="50" required></textarea>
               </div>
             </div>
             <div class="row">
-              <div class="col submit">
+              <div class="column-full submit">
                 <button type="submit" class="save">SAVE</button>
               </div>
             </div>
