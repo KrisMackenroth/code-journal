@@ -17,7 +17,6 @@ entryForm.addEventListener('submit', function (e) {
   newObject.photoUrl = entryForm.url.value;
   newObject.notes = entryForm.notes.value;
   newObject.EntryId = data.nextEntryId;
-
+  data.nextEntryId++;
   data.entries.unshift(newObject);
-  localStorage.setItem('entries', JSON.stringify(data));
 });
