@@ -9,6 +9,7 @@ main {
 .title {
   background-color: #4a2373;
   color: white;
+  height: 50px;
 }
 
 .column-half > img {
@@ -108,4 +109,51 @@ button {
 
 .position-absolute {
   position: relative;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p {
+  margin: 10px;
+  line-height: 25px;
+  font-family: sans-serif;
+}
+
+.new {
+  margin-left: 140px;
+  margin-top: 30px;
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.second-header {
+  margin-left: 10px;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+.flex {
+  display: flex;
+  margin-right: 5px;
+}
+
+.text-align {
+  text-align: right;
+  margin: auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #4b2373;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: 500;
 }
