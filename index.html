@@ -16,72 +16,77 @@
 
 <body>
   <main>
-    <div class=" background-purple"></div>
-    <div id="first-container" class="container hidden">
-      <div class="box">
-        <div data-view="entry-form" class="entry-form">
-          <div class="row position-absolute">
-            <div class="column-full title first-title">
-              <h2>Code Journal<a class="anchor" href="#">Entries</a></h2>
+    <div class="all">
+      <div class="view hidden" data-view="entry-form">
+        <div class=" background-purple"></div>
+        <div id="first-container" class="container">
+          <div class="box">
+            <div data-view="entry-form" class="entry-form">
+              <div class="row position-absolute">
+                <div class="column-full title first-title">
+                  <h2>Code Journal<a class="anchor clickable" href="#" data-view="entries">Entries</a></h2>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="row">
+                <h1>New Entry</h1>
+              </div>
+              <form class="journal-entry-form">
+                <div class="row">
+                  <div class="column-full column-half">
+                    <img class="new-image" src="images/placeholder-image-square.jpg" alt="placeholder">
+                  </div>
+                  <div class="column-full column-half text-input">
+                    <label for="user-title">Title<br></label>
+                    <input required name="title" type="text" id="user-title">
+                    <label for="user-url">Photo URL<br></label>
+                    <input required name="url" type="url" class="user-url">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="column-full">
+                    <label for="user-notes">Notes<br></label>
+                    <textarea name="notes" id="user-notes" rows="4" cols="50" required></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="column-full submit">
+                    <button type="submit" class="save clickable">SAVE</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <div class="box">
-          <div class="row">
-            <h1>New Entry</h1>
+      </div>
+      <div class="view active" data-view="entries">
+        <div data-view="entries" class="entries-button">
+          <div class=" background-purple"></div>
+          <div id="second-container" class="container">
+            <div class="box">
+              <div class="row position-absolute">
+                <div class="column-full title">
+                  <h2 class="second-header">Code Journal<a class="anchor clickable" href="#">Entries</a></h2>
+                </div>
+              </div>
+              <div class="row justify">
+                <div class="column-full flex">
+                  <div class="column-half">
+                    <h1>Entries</h1>
+                  </div>
+                  <div class="column-half text-align">
+                    <a href="#" class="new click-button clickable" data-view="entry-form">NEW</a>
+                  </div>
+                </div>
+              </div>
+              <ul>
+              </ul>
+            </div>
           </div>
-          <form class="journal-entry-form">
-            <div class="row">
-              <div class="column-full column-half">
-                <img class="new-image" src="images/placeholder-image-square.jpg" alt="placeholder">
-              </div>
-              <div class="column-full column-half text-input">
-                <label for="user-title">Title<br></label>
-                <input required name="title" type="text" id="user-title">
-                <label for="user-url">Photo URL<br></label>
-                <input required name="url" type="url" class="user-url">
-              </div>
-            </div>
-            <div class="row">
-              <div class="column-full">
-                <label for="user-notes">Notes<br></label>
-                <textarea name="notes" id="user-notes" rows="4" cols="50" required></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column-full submit">
-                <button type="submit" class="save">SAVE</button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>
-    <div data-view="entries" class="entries-button">
-      <div class=" background-purple"></div>
-      <div id="second-container" class="container">
-        <div class="box">
-          <div class="row position-absolute">
-            <div class="column-full title">
-              <h2 class="second-header">Code Journal<a class="anchor" href="#">Entries</a></h2>
-            </div>
-          </div>
-          <div class="row justify">
-            <div class="column-full flex">
-              <div class="column-half">
-                <h1>Entries</h1>
-              </div>
-              <div class="column-half text-align">
-                <a href="#" class="new click-button">NEW</a>
-              </div>
-            </div>
-          </div>
-          <ul>
-          </ul>
-        </div>
-      </div>
-    </div>
-
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

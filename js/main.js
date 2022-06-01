@@ -4,6 +4,10 @@ var newImage = document.querySelector('.new-image');
 
 var entryForm = document.querySelector('.journal-entry-form');
 
+var view = document.querySelectorAll('.view');
+
+var all = document.querySelector('.all');
+
 urlInput.addEventListener('input', function (event) {
 
   var test = event.target.value;
@@ -19,17 +23,11 @@ entryForm.addEventListener('submit', function (e) {
   newObject.EntryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(newObject);
-  var secondContainer = document.querySelector('.entries-button');
-  var firstContainer = document.getElementById('first-container');
-  secondContainer.classList.remove('hidden');
-  firstContainer.classList.add('hidden');
 });
 
 window.addEventListener('DOMContentLoaded', function (e) {
   var ul = document.querySelector('ul');
-  var storage = localStorage.getItem('Entries');
-  var obj = JSON.parse(storage);
-  var entriesTest = obj.entries;
+  var entriesTest = data.entries;
   for (var i = 0; i < entriesTest.length; i++) {
     var allEntries = journalEntry(entriesTest[i]);
     ul.appendChild(allEntries);
@@ -63,22 +61,39 @@ window.addEventListener('DOMContentLoaded', function (e) {
     divText.appendChild(p);
     return li;
   }
+
+  if (data.view === view[0].getAttribute('data-view')) {
+    view[0].classList.remove('hidden');
+    view[0].classList.add('active');
+    view[1].classList.add('hidden');
+    view[1].classList.remove('active');
+  } else if (data.view === view[1].getAttribute('data-view')) {
+    view[1].classList.remove('hidden');
+    view[1].classList.add('active');
+    view[0].classList.add('hidden');
+    view[0].classList.remove('active');
+  }
 });
 
-var anchor = document.querySelector('.anchor');
+function viewSwap(event) {
+  var j = 0;
+  var k = 1;
+  if (view[j].getAttribute('data-view') === event) {
+    view[j].classList.remove('hidden');
+    view[j].classList.add('active');
+    view[k].classList.add('hidden');
+    view[k].classList.remove('active');
+    data.view = view[j].getAttribute('data-view');
+  } else if (view[k].getAttribute('data-view') === event) {
+    view[k].classList.remove('hidden');
+    view[k].classList.add('active');
+    view[j].classList.add('hidden');
+    view[j].classList.remove('active');
+    data.view = view[k].getAttribute('data-view');
+  }
+}
 
-var clickButton = document.querySelector('.click-button');
-
-clickButton.addEventListener('click', function (event) {
-  var secondContainer = document.querySelector('.entries-button');
-  var firstContainer = document.getElementById('first-container');
-  secondContainer.classList.add('hidden');
-  firstContainer.classList.remove('hidden');
-});
-
-anchor.addEventListener('click', function (event) {
-  var secondContainer = document.querySelector('.entries-button');
-  var firstContainer = document.getElementById('first-container');
-  secondContainer.classList.remove('hidden');
-  firstContainer.classList.add('hidden');
+all.addEventListener('click', function (event) {
+  var dataView = event.target.getAttribute('data-view');
+  viewSwap(dataView);
 });
