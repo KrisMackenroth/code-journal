@@ -23,6 +23,15 @@
         <div id="first-container" class="container">
           <div class="box">
             <div data-view="entry-form" class="entry-form">
+              <div class="hidden-background">
+                <div class="hidden-two">
+                  <div class="pop">
+                    <p class="text-modal">Would you like to delete this entry?</p>
+                    <button class="cold-button">Cancel</button>
+                    <a href="#" class="yes-button">Confirm</a>
+                  </div>
+                </div>
+              </div>
               <div class="row position-absolute">
                 <div class="column-full title first-title">
                   <h2>Code Journal<a class="anchor clickable" href="#" data-view="entries">Entries</a></h2>
@@ -51,8 +60,11 @@
                     <textarea name="notes" id="user-notes" rows="5" cols="33" required></textarea>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="column-full submit">
+                <div class="row row-final">
+                  <div class="delete-row column-half column-full">
+                    <a href="#" class="bye hot-button">Delete</a>
+                  </div>
+                  <div class="column-full column-half submit">
                     <button type="submit" class="save clickable">SAVE</button>
                   </div>
                 </div>
