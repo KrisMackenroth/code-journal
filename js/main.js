@@ -135,6 +135,7 @@ function viewSwap(event) {
     newImage.setAttribute('src', 'images/placeholder-image-square.jpg');
     data.view = view[k].getAttribute('data-view');
     data.editing = null;
+
   }
 }
 
@@ -142,18 +143,19 @@ all.addEventListener('click', function (event) {
   var dataView = event.target.getAttribute('data-view');
   if (event.target.classList.contains('clickable')) {
     edit.textContent = 'New Entry';
+    deleteRow.classList.add('none');
   }
   viewSwap(dataView);
 });
 
 var edit = document.querySelector('.entry-title-fun');
 
+var deleteRow = document.querySelector('.delete-row');
 var userTitle = document.querySelector('#user-title');
 var userUrl = document.querySelector('.user-url');
 var userNotes = document.querySelector('#user-notes');
 
 ul.addEventListener('click', function (event) {
-
   var test = data.entries;
   if (event.target.classList.contains('interesting')) {
     edit.textContent = 'Edit Entry';
@@ -162,6 +164,7 @@ ul.addEventListener('click', function (event) {
     view[1].classList.add('hidden');
     view[1].classList.remove('active');
     data.view = view[0].getAttribute('data-view');
+    deleteRow.classList.remove('none');
     for (var i = 0; i < test.length; i++) {
       if (parseInt(event.target.getAttribute('data-entry-id')) === test[i].EntryId) {
         data.editing = event.target.getAttribute('data-entry-id');
@@ -175,3 +178,58 @@ ul.addEventListener('click', function (event) {
     }
   }
 });
+
+var yesButton = document.querySelector('.yes-button');
+
+var hotButton = document.querySelector('.hot-button');
+
+var coldButton = document.querySelector('.cold-button');
+
+var hiddenTwo = document.querySelector('.hidden-two');
+
+var hiddenBackground = document.querySelector('.hidden-background');
+
+hotButton.addEventListener('click', function (event) {
+  hiddenTwo.className = 'visible';
+  hiddenBackground.className = 'background';
+});
+
+coldButton.addEventListener('click', function (event) {
+  hiddenTwo.className = 'hidden';
+  hiddenBackground.className = 'hidden-background';
+});
+
+yesButton.addEventListener('click', function (event) {
+  data.editing = parseInt(data.editing);
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.editing === data.entries[i].EntryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+  var dataView = view[1].getAttribute('data-view');
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild);
+  } journalEntry();
+  viewSwap(dataView);
+  newImage.setAttribute('src', 'images/placeholder-image-square.jpg');
+  entryForm.reset();
+
+  hiddenTwo.className = 'hidden';
+  hiddenBackground.className = 'hidden-background';
+  if (data.entries < 1) {
+    var noEntries = document.createElement('p');
+    noEntries.classList.add('keep-center');
+    var noText = document.createTextNode('No entries have been recorded.');
+    noEntries.appendChild(noText);
+    ul.appendChild(noEntries);
+  }
+
+});
+
+if (data.entries < 1) {
+  var noEntries = document.createElement('p');
+  noEntries.classList.add('keep-center');
+  var noText = document.createTextNode('No entries have been recorded.');
+  noEntries.appendChild(noText);
+  ul.appendChild(noEntries);
+}
