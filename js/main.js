@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', function (e) {
   }
   for (var i = 0; i < data.entries.length; i++) {
     if (data.editing === data.entries[i].EntryId) {
-      Edit.textContent = 'Edit Entry';
+      edit.textContent = 'Edit Entry';
       userTitle.setAttribute('value', data.entries[i].title);
       userUrl.setAttribute('value', data.entries[i].photoUrl);
       newImage.setAttribute('src', data.entries[i].photoUrl);
@@ -141,12 +141,12 @@ function viewSwap(event) {
 all.addEventListener('click', function (event) {
   var dataView = event.target.getAttribute('data-view');
   if (event.target.classList.contains('clickable')) {
-    Edit.textContent = 'New Entry';
+    edit.textContent = 'New Entry';
   }
   viewSwap(dataView);
 });
 
-var Edit = document.querySelector('.entry-title-fun');
+var edit = document.querySelector('.entry-title-fun');
 
 var userTitle = document.querySelector('#user-title');
 var userUrl = document.querySelector('.user-url');
@@ -156,7 +156,7 @@ ul.addEventListener('click', function (event) {
 
   var test = data.entries;
   if (event.target.classList.contains('interesting')) {
-    Edit.textContent = 'Edit Entry';
+    edit.textContent = 'Edit Entry';
     view[0].classList.remove('hidden');
     view[0].classList.add('active');
     view[1].classList.add('hidden');
