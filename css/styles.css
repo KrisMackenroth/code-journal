@@ -1,3 +1,7 @@
+html {
+  background-color: #ececec;
+}
+
 * {
   font-family: sans-serif;
 }
@@ -156,4 +160,23 @@ a {
   border-radius: 5px;
   font-family: sans-serif;
   font-weight: 500;
+}
+
+.fa-pen {
+  content: "\f304";
+  padding-left: 300px;
+  font-size: 30px;
+  color: #4b2373;
+  
+}
+
+.tiny-box {
+  height: 100px;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.interesting {
+  position: absolute;
+  padding-top: 20px;
 }
